@@ -1,18 +1,30 @@
 package pl.edu.wszib.springjpa.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Lob;
+import jakarta.persistence.OneToMany;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.Instant;
 import java.util.List;
 
+@Entity
 public class CV {
 
+
+  @GeneratedValue
   private Integer id;
   private String imie;
   private String nazwisko;
   private Instant dataUrodzenia;
+
+  @Lob
   private byte[] zdjecie;
+  @OneToMany
   private List<Praca> doswiadczenie;
+
+  @OneToMany
   private List<Kompetencja> kompetencje;
   private Instant createdAt;
   private Instant updatedAt;
