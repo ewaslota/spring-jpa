@@ -16,6 +16,7 @@ public class ToDo {
   private Integer id;
   @Column(nullable = false)
   private String zadanie;
+  @Enumerated(EnumType.STRING)
   @Column(nullable = false)
   private ToDoStatus status;
   @Column(nullable = false)
